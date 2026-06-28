@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generic structure validator for the ICM-VSCode workspace.
+"""Generic structure validator for the _AI-workflows-style workspace.
 Cross-platform, no third-party deps. Exit 0 = GO, 1 = HOLD."""
 from __future__ import annotations
 import sys
