@@ -1,0 +1,5 @@
+# Generic example-workflow dependencies. Pin before tagging a release.
+pdfplumber>=0.11
+pytesseract>=0.3.10
+pillow>=10
+feedparser>=6
