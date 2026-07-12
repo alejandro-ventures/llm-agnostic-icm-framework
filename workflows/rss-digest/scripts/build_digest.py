@@ -5,6 +5,9 @@ from __future__ import annotations
 import csv, re, sys, datetime
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[3] / "_core" / "scripts"))
+import sandbox  # filesystem guardrail — see _core/SANDBOXING.md
+
 def read_feeds(md: Path) -> list[str]:
     return re.findall(r"https?://\S+", md.read_text(encoding="utf-8")) if md.exists() else []
 
@@ -13,7 +16,8 @@ def main(feeds_md: str, out_dir: str) -> int:
         import feedparser
     except ImportError:
         print("Install deps first: pip install -r requirements.txt"); return 1
-    out = Path(out_dir); out.mkdir(parents=True, exist_ok=True)
+    out = sandbox.guard_write(out_dir)          # refuse to write outside the workspace
+    out.mkdir(parents=True, exist_ok=True)
     urls = read_feeds(Path(feeds_md))
     today = datetime.date.today().isoformat()
     lines = [f"# Digest — {today}", ""]
@@ -36,6 +40,7 @@ def main(feeds_md: str, out_dir: str) -> int:
     return 0
 
 if __name__ == "__main__":
+    wf = sandbox.workflow_dir(__file__)
     a = sys.argv[1:]
-    raise SystemExit(main(a[0] if a else "references/feeds.example.md",
-                          a[1] if len(a) > 1 else "output"))
+    raise SystemExit(main(a[0] if a else str(wf / "references" / "feeds.example.md"),
+                          a[1] if len(a) > 1 else str(wf / "output")))

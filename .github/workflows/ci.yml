@@ -1,0 +1,29 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  structure:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Byte-compile all Python (syntax check)
+        run: python -m compileall -q _core shared workflows
+      - name: Structure health check
+        run: python _core/scripts/health_check.py
+      - name: Sandbox guardrail self-test
+        run: python _core/scripts/sandbox.py
+      - name: Harness-config generator smoke test
+        run: python _core/scripts/gen-harness-config.py all --include-disabled > /dev/null
+      - name: Token-tracker smoke test
+        run: |
+          python _core/token-tracker/tracker.py log --workflow ci --action smoke --source local --tokens 1 > /dev/null
+          python _core/token-tracker/analyze.py
+      - name: Provenance manifest is current
+        run: python _core/scripts/make_provenance.py --check

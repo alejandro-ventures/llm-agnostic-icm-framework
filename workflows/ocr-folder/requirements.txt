@@ -1,0 +1,7 @@
+# ocr-folder dependencies — pure pip, no system Tesseract/poppler binary required.
+# Install into this workflow's venv:
+#   workflows/ocr-folder/.venv/Scripts/python -m pip install -r workflows/ocr-folder/requirements.txt
+pypdfium2>=4.0              # render pages + extract native text layer
+rapidocr-onnxruntime>=1.3  # ONNX OCR engine; models ship in the wheel, runs offline
+numpy>=1.24                # image array passed to the engine
+pillow>=10

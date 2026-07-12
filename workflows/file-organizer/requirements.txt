@@ -1,0 +1,2 @@
+# file-organizer dependencies — standard library only.
+# Kept for the per-workflow venv convention (see AGENTS.md -> Execution environments).

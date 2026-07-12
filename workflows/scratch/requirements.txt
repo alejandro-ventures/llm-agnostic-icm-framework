@@ -1,0 +1,6 @@
+# scratch dependencies — standard library only by default.
+# scratch is a catch-all, so tasks may need arbitrary packages. When one does:
+#   1. install it into this workflow's venv:
+#        workflows/scratch/.venv/Scripts/python -m pip install <package>
+#   2. pin it below so the run stays reproducible.
+# Keep this list trimmed to what current scratch scripts actually import.

@@ -1,5 +1,10 @@
-# Generic example-workflow dependencies. Pin before tagging a release.
-pdfplumber>=0.11
-pytesseract>=0.3.10
-pillow>=10
-feedparser>=6
+# Root-level tooling deps.
+#
+# Dependency isolation is PER WORKFLOW: each workflow pins its own packages in
+# workflows/<name>/requirements.txt and installs them into its own .venv (gitignored).
+# See AGENTS.md -> "Execution environments".
+#
+# Keep this file present (health_check.py expects it) but minimal. The structure
+# validator (_core/scripts/health_check.py) uses only the standard library, so there
+# are no required root-level packages today. Add a tool here only if it is used by the
+# workspace itself (not by an individual workflow).

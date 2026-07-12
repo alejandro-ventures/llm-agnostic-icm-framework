@@ -1,0 +1,32 @@
+{
+  "_note": "Neutral MCP server registry. Define each server ONCE here, then project it into a harness's native config with _core/scripts/gen-harness-config.py. Keeps the repo harness-agnostic. Secrets live in .env and are referenced by ${ENV:KEY}; never inline a secret here.",
+  "servers": [
+    {
+      "name": "filesystem",
+      "description": "Example (disabled): expose the workflows folder to the model over MCP.",
+      "enabled": false,
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "${WORKSPACE}/workflows"],
+      "env": {}
+    },
+    {
+      "name": "crm-example",
+      "description": "Example (disabled): pattern for a credentialed line-of-business connector (CRM, ERP, ticketing). The secret comes from .env, not from this file.",
+      "enabled": false,
+      "transport": "stdio",
+      "command": "python",
+      "args": ["-m", "your_crm_mcp"],
+      "env": { "CRM_TOKEN": "${ENV:CRM_TOKEN}" }
+    },
+    {
+      "name": "imap-mailbox-example",
+      "description": "Example (disabled): READ-ONLY access to one IMAP mailbox via a local MCP server script. Scope the entry name to the mailbox (imap-<account>); to add another mailbox, copy this entry under a new name pointing at the same server script with that mailbox's own config env var. Machine paths and credentials never live in this committed file — they come from env vars: IMAP_MCP_SERVER (path to the server script), IMAP_CONFIG (path to that mailbox's credential JSON).",
+      "enabled": false,
+      "transport": "stdio",
+      "command": "python",
+      "args": ["${ENV:IMAP_MCP_SERVER}"],
+      "env": { "IMAP_CONFIG": "${ENV:IMAP_CONFIG}" }
+    }
+  ]
+}

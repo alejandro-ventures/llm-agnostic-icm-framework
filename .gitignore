@@ -9,39 +9,36 @@ credentials.*
 *.pfx
 *.p12
 
-# Local/browser/auth state
-.auth/
-.browser_data*/
-.downloads/
-state.json
-*.log
-*.out.txt
-
-# Local data, caches, and logs
+# Data (user-supplied) and staging (transient) — keep folders via .gitkeep
+workflows/*/input/*
+workflows/*/output/*
+!workflows/*/input/.gitkeep
+!workflows/*/output/.gitkeep
 **/_ocr_cache/
 **/.ocr_cache/
+**/.ocr_cache
+**/.last_run
+**/run-log.csv
+_core/token-tracker/usage-log.jsonl
+state.json
+*.log
 
-# Editor/system/build artifacts
+# Editor / OS / build
 .vscode/
 .idea/
+.claude/settings.local.json
 .DS_Store
 Thumbs.db
 __pycache__/
 *.pyc
 .venv/
+.venv-*/
 venv/
 node_modules/
-
-# Office lock files
 ~$*
 
+# Windows Sandbox configs (contain absolute, machine-specific host paths)
+**/.sandbox/
 
-# Workflow data (user-supplied) and staging (transient) — keep folders via .gitkeep
-workflows/*/input/*
-workflows/*/output/*
-!workflows/*/input/.gitkeep
-!workflows/*/output/.gitkeep
-**/.ocr_cache
-**/.last_run
-**/run-log.csv
-
+# Generated, machine-specific harness MCP configs (source of truth is _core/integrations/servers.json)
+.mcp.json

@@ -1,0 +1,4 @@
+# rss-digest dependencies.
+# Install into this workflow's venv:
+#   workflows/rss-digest/.venv/Scripts/python -m pip install -r workflows/rss-digest/requirements.txt
+feedparser>=6
