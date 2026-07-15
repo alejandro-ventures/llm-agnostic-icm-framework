@@ -27,6 +27,9 @@ workflow contracts, a leak gate — and four new real-use workflows.
   guard (`safe_open_w`).
 
 ### Changed
+- `make_provenance.py` now hashes committed blob content instead of working-tree bytes,
+  so the manifest is platform-independent (a CRLF working copy on Windows no longer
+  produces a different hash than a CI checkout).
 - `PROVENANCE.md` — manifest scope clarified: git-tracked source and docs only; dependencies
   and generated outputs are not covered.
 

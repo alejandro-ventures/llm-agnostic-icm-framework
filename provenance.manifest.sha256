@@ -1,6 +1,6 @@
 # Content manifest — LLM-agnostic ICM framework
 # Generated 2026-07-15. SHA-256 of each git-tracked file (manifest excluded).
-# Combined root hash (SHA-256 of the entry lines below): fd645103917e7a0de4b2dfe59dd5213fcecf7466b27edfa0c08dd524c45cbcc9
+# Combined root hash (SHA-256 of the entry lines below): 5af267581480991c10f6fe510d3880a3d6a97f1d9c1ba2ffc4dc1cf28866617c
 # Regenerate / verify: python _core/scripts/make_provenance.py [--check]
 
 d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c  .gitattributes
@@ -10,7 +10,7 @@ b6fce4553a6af98f17b531750a893aa85114c3baf982c9856f1b5aee3ffd5155  .gitignore
 26a4e6607ca98af4a6150fd49762bc71e36a3b3b3b8876a2dd4a1487d8104a26  AGENTS.md
 ee569a4855c28166f6d9d9a71562cb137113134e435e9f6b8fda3666fcd9241e  ARCHITECTURE.md
 10a3c539609168f497e1eaa5dcfd8e86e26cb082fd4c3286d68659f3ff211414  AUTHORS.md
-1737908b37c8a7ab2c901b27dc8c1a97f09628c188debaf5fca943b412639533  CHANGELOG.md
+3444c1bb7bd5c26bd53c638c4bc6a5330a804ae66f026681b66a0611db71192d  CHANGELOG.md
 53c6d47ebbed9c1171c1063fc95cc40ebbb297673ba298cacad8fe501bedae5f  CITATION.cff
 2ecf85ab81b5ac7c6e6a0afaaa202880371ac7c6c06b91467f87cbfcf15ef360  CLAUDE.md
 09faf804a57a70197004d8d96997141057bf79a9be86fbe626576ac20c39152d  COMPATIBILITY.md
@@ -30,7 +30,7 @@ b91af93072b78dcd841d28c1a14e3915743913df0f098c06293fa1876bf28a11  _core/integrat
 816c683e1dedf130381c3e06af90213fce2f80fa1c8c480637d6dc4dd47262e2  _core/scripts/gen-harness-config.py
 a631ab0b79f8f49c7ab69a85fbec55f74fc00c00a510251c24fcfd936324a530  _core/scripts/health_check.py
 2c4eac85dd2335697d266f2411b7d84aa1f19c7b262a347b4f74e5cada2f994b  _core/scripts/leak_scan.py
-9305c0eeb1145ab77b6579a4d7556c75a68ccbd43d7e6f52e79c7257b6c44620  _core/scripts/make_provenance.py
+b5aa69dd22bec10b5dbfc09abe1fd651356daf8b5fc6d9479520b5f15b5e11ff  _core/scripts/make_provenance.py
 5a6c833db0ee5896e6b1f8857d64de70037255a248c138f22966681f6227b375  _core/scripts/new-sandbox.ps1
 2e09c75c62b8c505d4fd4e5e3e8c4c04ec7b6faf374e40812f6bf501ec6acbf4  _core/scripts/sandbox.py
 5b6e4ff56796d73fc498021e8acd06f07dfab0fb53509a259f43ba8345fbed75  _core/token-tracker/README.md
@@ -69,7 +69,7 @@ b5c449c4b24c481f45a11d3d04c4dd0fe3dc75dc19c26997d1356f0bdb14f155  workflows/ocr-
 4dacb2169f5899c8f7c6a2624b8aa259f38d0ba02a00964f6576eea1b198b523  workflows/ocr-folder/requirements.txt
 d29d39efcb1bdffa7b8b4c854003110a78663e1f0b1abfe0e993ef7369445e0e  workflows/ocr-folder/scripts/ocr_folder.py
 463679aef1fa93f8485dfa9cf5f69cec20edd7257460c16c9b116d6cc8920480  workflows/recurrence-review/.github/recurrence-review/SKILL.md
-69692d7d89af158dca0ff5dd7a01b8cb555d404158ee338f4efb0da35bed086c  workflows/recurrence-review/.github/recurrence-review/agents/openai.yaml
+97e7257f1b21185ed4528ec26b9ae5f0cc49836ed7a7ed4a14ec27e49883eec4  workflows/recurrence-review/.github/recurrence-review/agents/openai.yaml
 7f641c2fdb57b45f78683b9dac2fc499dae6f8941c3c7745f3d4d751731efda2  workflows/recurrence-review/docs/README.md
 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  workflows/recurrence-review/input/.gitkeep
 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  workflows/recurrence-review/output/.gitkeep

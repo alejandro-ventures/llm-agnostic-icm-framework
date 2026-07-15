@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Regenerate provenance.manifest.sha256 — SHA-256 of every git-tracked file.
 
-Stdlib only (shells out to `git ls-files` for the tracked list). The manifest itself is
+Stdlib only (shells out to git). Hashes each file's COMMITTED BLOB content — not working-tree
+bytes — so the manifest is identical on every platform regardless of line-ending checkout
+(a CRLF working copy on Windows must not change the hash). The manifest itself is
 excluded (it cannot contain its own hash). The combined root hash is the SHA-256 of the
 sorted entry lines ("<hash>  <path>\\n" each), so anyone can re-derive and verify it from
 a clone. Run from anywhere inside the repo:
