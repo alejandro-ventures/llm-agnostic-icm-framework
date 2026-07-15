@@ -2,6 +2,34 @@
 
 All notable changes to this project are documented here.
 
+## [Unreleased]
+Evidence and contracts: honest compatibility claims, a written threat model, machine-checked
+workflow contracts, a leak gate — and four new real-use workflows.
+
+### Added
+- `COMPATIBILITY.md` — per-client evidence ledger (Verified / Experimental / Conceptual /
+  Unsupported); the README's "any LLM-backed assistant" claim narrowed to what's demonstrated.
+- `SECURITY.md` — threat model and enforcement map; states the core invariant (processed
+  content is data, never instructions) and the honest code-vs-convention line.
+- `AGENTS.md` → Instruction precedence — fixed 5-level precedence order, deterministic routing,
+  and stop-on-ambiguity for state-changing work.
+- SKILL.md contract keys — every workflow's frontmatter now declares `network`, `destructive`,
+  and `gates`; `health_check.py` fails the build if any key is missing.
+- `_core/scripts/leak_scan.py` — publication gate: scans tree or full history (UTF-16-aware)
+  for credential patterns, unlisted emails, and a private terms file that never enters the repo
+  (`.leakscan.local`, gitignored). Wired into CI.
+- CI now also runs on `windows-latest` (the workspace is PowerShell-heavy; test where it runs).
+- New workflows from real use: `transcribe` (fully local ASR + diarization, offline-enforced),
+  `background-remove` (documented model decision tree), `data-room-check` (read-only checklist
+  audit), `recurrence-review` (mines scratch history, human-gated workflow promotion — ships
+  with its own test suite).
+- Token-tracker v2 — schema v2 with validated intent keys; writes routed through the sandbox
+  guard (`safe_open_w`).
+
+### Changed
+- `PROVENANCE.md` — manifest scope clarified: git-tracked source and docs only; dependencies
+  and generated outputs are not covered.
+
 ## [2.0.0] - 2026-07-12
 From concept demo to hardened workspace: the framework's rules are now enforced by code, not
 just documented.

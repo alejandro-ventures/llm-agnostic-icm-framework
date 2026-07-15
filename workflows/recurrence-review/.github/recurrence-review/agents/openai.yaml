@@ -1,0 +1,4 @@
+interface:
+  display_name: "Recurrence Review"
+  short_description: "Review recurring scratch work safely"
+  default_prompt: "Use $recurrence-review to scan recent scratch runs and propose any workflow candidates."

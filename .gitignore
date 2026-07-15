@@ -1,4 +1,5 @@
 # Secrets and credentials
+.leakscan.local
 .env
 .env.*
 !.env.example

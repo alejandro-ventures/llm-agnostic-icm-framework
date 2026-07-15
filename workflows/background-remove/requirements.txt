@@ -1,0 +1,5 @@
+# Dependencies for background-remove
+# Install with python workflows/background-remove/.venv/Scripts/python -m pip install -r requirements.txt from project root
+rembg>=2.0
+pillow>=10
+onnxruntime>=1.15

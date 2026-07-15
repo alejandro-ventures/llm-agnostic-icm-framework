@@ -4,6 +4,9 @@ description: >-
   Catch-all fallback for a task that matches no specialized workflow. Gives general input/output a
   home under the same write-boundary, logging, and human gates as every other workflow.
 argument-hint: "The task, plus any files to work on (default workflows/scratch/input)"
+network: none by default — any network use must be stated to the user first
+destructive: none without a gate — CONVENTIONS rules 4–6 apply in full
+gates: ["any delete/overwrite/send", "any network access"]
 ---
 # scratch
 Route here ONLY when no specialized workflow in the routing table fits. "General" loosens the task

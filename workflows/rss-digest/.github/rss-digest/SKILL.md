@@ -5,6 +5,9 @@ description: >-
   items. Read-only against the network; writes only a local markdown file.
 argument-hint: "A feeds list (defaults to references/feeds.example.md)"
 requires-python: "3.9+"
+network: outbound HTTPS to the user-listed feeds only, read-only
+destructive: none — writes a new dated digest file
+gates: ["adding a feed not already in the user's list"]
 ---
 
 # rss-digest

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Summarize usage-log.jsonl: per-workflow runs, tokens, and human-minutes saved.
-Stdlib only. Usage: python _core/token-tracker/analyze.py"""
+The local, agnostic counterpart of the work version's business-case analyzer. Stdlib only.
+Usage: python _core/token-tracker/analyze.py"""
 from __future__ import annotations
 import json
 from collections import defaultdict

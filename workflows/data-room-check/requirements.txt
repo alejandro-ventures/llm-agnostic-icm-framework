@@ -1,0 +1,3 @@
+# Dependencies for data-room-check
+# No third-party packages needed yet (stdlib-only)
+pip>=21.0

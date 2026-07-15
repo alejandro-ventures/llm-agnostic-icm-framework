@@ -1,0 +1,27 @@
+# transcribe dependencies — REBUILD RECIPES for BOTH venvs (see SKILL.md / docs/README.md).
+# This workflow deliberately uses two interpreters (rule-9 exception): the engines' CUDA DLL
+# stacks segfault when loaded into one process on Windows, so stages run isolated.
+#
+# ---- Stage 1: ASR — workflows/transcribe/.venv-asr ------------------------------
+# Rebuild:  python -m venv .venv && pip install (with cu128 extra index, see below)
+#   faster-whisper==1.2.1
+#   ctranslate2==4.7.2
+#   torch==2.11.0+cu128          # --extra-index-url https://download.pytorch.org/whl/cu128
+#   torchaudio==2.11.0+cu128
+#   soundfile==0.13.1
+#   av==17.0.1
+#   numpy==2.2.6
+# Model (HF cache, ungated): Systran/faster-whisper-large-v3 (~2.9 GB)
+#
+# ---- Stage 2: Diarization — workflows/transcribe/.venv-pyannote ------------------
+# Rebuild:  py -3.10 -m venv .venv-pyannote  then pip install:
+#   torch / torchaudio from https://download.pytorch.org/whl/cu128  (Blackwell needs cu128)
+#   pyannote.audio>=4.0          # 3.x is incompatible with torchaudio 2.11 (AudioMetaData)
+#   soundfile                    # in-memory waveform feed (torchcodec broken vs FFmpeg 8)
+# Models (HF cache, LICENSE-GATED — one-time authenticated download, then offline):
+#   pyannote/speaker-diarization-3.1            (pipeline config)
+#   pyannote/segmentation-3.0                   (segmentation weights)
+#   pyannote/wespeaker-voxceleb-resnet34-LM     (speaker embeddings)
+#   pyannote/speaker-diarization-community-1    (PLDA files)
+#
+# System tools: ffmpeg/ffprobe 8.x on PATH (WinGet Gyan.FFmpeg).

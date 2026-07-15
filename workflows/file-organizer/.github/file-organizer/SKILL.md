@@ -5,6 +5,9 @@ description: >-
   first; only applies changes after explicit user approval. Never deletes.
 argument-hint: "Path to a folder to analyze (defaults to workflows/file-organizer/input)"
 requires-python: "3.9+"
+network: none
+destructive: none — copies only, never deletes; apply step requires approval
+gates: ["applying the reorganization plan"]
 ---
 
 # file-organizer

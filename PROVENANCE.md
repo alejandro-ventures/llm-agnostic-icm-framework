@@ -32,7 +32,10 @@ to me and does not incorporate any third party's confidential information or pro
 ## 5. Independent Timestamping
 
 - GitHub commit history — automatic, immutable author/date metadata on every commit.
-- Content hash: `provenance.manifest.sha256` (SHA-256 of all published files).
+- Content hash: `provenance.manifest.sha256` — SHA-256 of every **git-tracked source and
+  documentation file** at the tagged release. Dependencies, virtual environments, and generated
+  outputs are not covered (they are not tracked). Regenerate/verify:
+  `python _core/scripts/make_provenance.py [--check]`.
 - OpenTimestamps proof: `provenance.manifest.sha256.ots` (anchors the content hash to the
   Bitcoin blockchain; generated on release day — see PUBLISH-WALKTHROUGH.md).
 - Internet Archive snapshot: submit the repository URL at web.archive.org on release day and

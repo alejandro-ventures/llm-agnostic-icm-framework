@@ -6,6 +6,9 @@ description: >-
   files on re-runs. Pure pip — no system OCR binary needed.
 argument-hint: "Path to a folder of PDFs (defaults to workflows/ocr-folder/input)"
 requires-python: "3.9+"
+network: none
+destructive: none — outputs are new files; overwrite requires a gate
+gates: ["overwriting any existing output"]
 ---
 
 # ocr-folder

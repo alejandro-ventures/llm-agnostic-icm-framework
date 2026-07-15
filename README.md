@@ -1,9 +1,10 @@
 # LLM-agnostic ICM framework
 
 A personal, **model-agnostic** adaptation of the Interpretable Context Methodology (ICM):
-folder structure as agent architecture, runnable under Codex, Claude, GitHub Copilot Chat, a
-local model, or any LLM-backed assistant. No orchestration framework — the filesystem is the
-architecture, and the rules that matter are enforced by code, not just prose.
+folder structure as agent architecture. Verified today under GitHub Copilot Chat and Claude
+Code, experimental under Codex CLI and small local models — `COMPATIBILITY.md` is the honest
+ledger of what has actually been demonstrated, per client. No orchestration framework — the
+filesystem is the architecture, and the rules that matter are enforced by code, not just prose.
 
 This repository contains only generic, reusable framework code, documentation, and synthetic
 examples — no private data, credentials, or secrets.
@@ -21,9 +22,12 @@ Each workflow runs in its own venv with its own pinned `requirements.txt` (see `
 Execution environments).
 
 ## What's inside
-- `AGENTS.md` — Layer-0 router (model-neutral), with a `scratch` fallback so no task ever
-  improvises a write location.
+- `AGENTS.md` — Layer-0 router (model-neutral), with fixed instruction precedence, deterministic
+  routing, and a `scratch` fallback so no task ever improvises a write location.
 - `PORTABILITY.md` — the five rules that keep the workspace LLM- and harness-agnostic.
+- `COMPATIBILITY.md` — which clients are Verified / Experimental / Conceptual, and what each
+  status actually means.
+- `SECURITY.md` — the threat model and the map of which rules are enforced by code vs. convention.
 - `_core/` — conventions, glossary, onboarding, and the mechanism layer:
   - `scripts/sandbox.py` — filesystem guardrail: out-of-workspace writes and secret files are
     refused *in code*, not just forbidden in prose (`_core/SANDBOXING.md` has the full threat
@@ -37,6 +41,14 @@ Execution environments).
   - `ocr-folder` — make scanned PDFs searchable (pure-pip ONNX OCR, content-hash cache).
   - `file-organizer` — plan-then-apply folder tidy; never deletes.
   - `rss-digest` — public RSS/Atom feeds into a dated markdown digest.
+  - `transcribe` — call recordings into speaker-labeled transcripts, fully local (whisper +
+    pyannote, offline-enforced after a one-time gated model download).
+  - `background-remove` — image backgrounds removed to transparent PNGs, with a documented
+    model decision tree.
+  - `data-room-check` — audit a read-only folder against a checklist; report only, never touches
+    the reference.
+  - `recurrence-review` — mine `scratch` run history for recurring tasks and propose new
+    workflows, with two human gates (scaffold, then hash-pinned router promotion).
   - `scratch` — the routing fallback: general tasks under the same boundary, gates, and logging.
 - `shared/templates/` — scaffolding for new workflows; `shared/hooks/` — PreToolUse guard
   template that denies secret-reading tool calls at the harness level.
