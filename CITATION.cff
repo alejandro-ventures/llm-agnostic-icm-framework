@@ -8,8 +8,8 @@ authors:
     orcid: "https://orcid.org/0009-0002-4730-3933"
 repository-code: "https://github.com/alejandro-ventures/llm-agnostic-icm-framework"
 license: Apache-2.0
-version: 2.0.0
-date-released: 2026-07-12
+version: 2.1.0
+date-released: "2026-07-15"
 references:
   - type: article
     title: "Interpretable Context Methodology: Folder Structure as Agentic Architecture"

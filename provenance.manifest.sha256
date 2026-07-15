@@ -1,6 +1,6 @@
 # Content manifest — LLM-agnostic ICM framework
 # Generated 2026-07-15. SHA-256 of each git-tracked file (manifest excluded).
-# Combined root hash (SHA-256 of the entry lines below): 5dd4976157c388841e748540a9c50e475802063e13427346a105ba59646e9514
+# Combined root hash (SHA-256 of the entry lines below): a11573ea9260c379a0c441db43c2874bcc15bf82f1beec7c0326cd5d7c8f4d82
 # Regenerate / verify: python _core/scripts/make_provenance.py [--check]
 
 d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c  .gitattributes
@@ -10,8 +10,8 @@ b6fce4553a6af98f17b531750a893aa85114c3baf982c9856f1b5aee3ffd5155  .gitignore
 26a4e6607ca98af4a6150fd49762bc71e36a3b3b3b8876a2dd4a1487d8104a26  AGENTS.md
 ee569a4855c28166f6d9d9a71562cb137113134e435e9f6b8fda3666fcd9241e  ARCHITECTURE.md
 10a3c539609168f497e1eaa5dcfd8e86e26cb082fd4c3286d68659f3ff211414  AUTHORS.md
-3444c1bb7bd5c26bd53c638c4bc6a5330a804ae66f026681b66a0611db71192d  CHANGELOG.md
-53c6d47ebbed9c1171c1063fc95cc40ebbb297673ba298cacad8fe501bedae5f  CITATION.cff
+6bd58b91d224fcfc4836bb666ba59a8035e392bdd1488131136506cbbeec5fa2  CHANGELOG.md
+86de73b28ad55d2ce28eb1269d9ff99a5a6cb9e250c1c429a401f017b2797390  CITATION.cff
 2ecf85ab81b5ac7c6e6a0afaaa202880371ac7c6c06b91467f87cbfcf15ef360  CLAUDE.md
 09faf804a57a70197004d8d96997141057bf79a9be86fbe626576ac20c39152d  COMPATIBILITY.md
 f24ff8678db0e29367a631021367f77207f836265652f59f28a455ef806ee6d9  LICENSE

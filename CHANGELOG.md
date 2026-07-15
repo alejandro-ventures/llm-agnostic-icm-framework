@@ -2,7 +2,7 @@
 
 All notable changes to this project are documented here.
 
-## [Unreleased]
+## [2.1.0] - 2026-07-15
 Evidence and contracts: honest compatibility claims, a written threat model, machine-checked
 workflow contracts, a leak gate — and four new real-use workflows.
 
