@@ -1,6 +1,7 @@
 # Content manifest — LLM-agnostic ICM framework
-# Generated 2026-07-15. SHA-256 of each git-tracked file (manifest excluded).
-# Combined root hash (SHA-256 of the entry lines below): a11573ea9260c379a0c441db43c2874bcc15bf82f1beec7c0326cd5d7c8f4d82
+# Generated 2026-07-15. SHA-256 of each git-tracked file's blob content
+# (manifest and its .ots proof excluded; hashes are line-ending independent).
+# Combined root hash (SHA-256 of the entry lines below): 3df4fdd7820dbbb7a7c333ebc3767b1c7986efbb2abd599c71578c7721d35960
 # Regenerate / verify: python _core/scripts/make_provenance.py [--check]
 
 d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c  .gitattributes
@@ -17,7 +18,7 @@ ee569a4855c28166f6d9d9a71562cb137113134e435e9f6b8fda3666fcd9241e  ARCHITECTURE.m
 f24ff8678db0e29367a631021367f77207f836265652f59f28a455ef806ee6d9  LICENSE
 402b41c8cd5b101129c25b7dd5610df301af163800fa1521deb5635d9e622cf5  NOTICE
 0e0f2f7aa0a1950b7ed0f4d6e3229121e4a8c0dfa02485c935ada5a037054d6c  PORTABILITY.md
-50ca23b3f7bb24f8e8c9a40af8b39c73c6fb23353281b3f97cba121c9b1082a3  PROVENANCE.md
+723944e7d8f9ae8fc77b5d44b79197045355fd83d2a8c4ac2ecd1476e2bd161e  PROVENANCE.md
 fd8f815dcdfd96d5006a2aee5c8ace00b4c03fe2663456df1c4ce20401708b5c  README.md
 58d206d0e83157787c25031ee1de731175e6696fd7e6a1afe366559d23dc8d4a  SECURITY.md
 0e1225e428b887827624b4214879389e980a407aae3c9c548e5c5ee49f927600  _core/CONVENTIONS.md
@@ -30,7 +31,7 @@ b91af93072b78dcd841d28c1a14e3915743913df0f098c06293fa1876bf28a11  _core/integrat
 816c683e1dedf130381c3e06af90213fce2f80fa1c8c480637d6dc4dd47262e2  _core/scripts/gen-harness-config.py
 a631ab0b79f8f49c7ab69a85fbec55f74fc00c00a510251c24fcfd936324a530  _core/scripts/health_check.py
 2c4eac85dd2335697d266f2411b7d84aa1f19c7b262a347b4f74e5cada2f994b  _core/scripts/leak_scan.py
-b5aa69dd22bec10b5dbfc09abe1fd651356daf8b5fc6d9479520b5f15b5e11ff  _core/scripts/make_provenance.py
+5a89e34ed587a0c900b6e9e5ada806c3cb8d247bc666acdbc931c5a004a332e2  _core/scripts/make_provenance.py
 5a6c833db0ee5896e6b1f8857d64de70037255a248c138f22966681f6227b375  _core/scripts/new-sandbox.ps1
 2e09c75c62b8c505d4fd4e5e3e8c4c04ec7b6faf374e40812f6bf501ec6acbf4  _core/scripts/sandbox.py
 5b6e4ff56796d73fc498021e8acd06f07dfab0fb53509a259f43ba8345fbed75  _core/token-tracker/README.md

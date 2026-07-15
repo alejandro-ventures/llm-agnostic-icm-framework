@@ -36,10 +36,18 @@ to me and does not incorporate any third party's confidential information or pro
   documentation file** at the tagged release. Dependencies, virtual environments, and generated
   outputs are not covered (they are not tracked). Regenerate/verify:
   `python _core/scripts/make_provenance.py [--check]`.
-- OpenTimestamps proof: `provenance.manifest.sha256.ots` (anchors the content hash to the
-  Bitcoin blockchain; generated on release day — see PUBLISH-WALKTHROUGH.md).
+- OpenTimestamps proof: `provenance.manifest.sha256.ots` — anchors the manifest's combined
+  root hash to the Bitcoin blockchain. The proof and the manifest itself are excluded from the
+  manifest's file list (derived artifacts cannot contain their own hash).
 - Internet Archive snapshot: submit the repository URL at web.archive.org on release day and
   record the resulting snapshot URL here.
+
+### Timestamp records
+- **v2.1.0 (2026-07-15):** OTS proof committed as `provenance.manifest.sha256.ots`, submitted
+  to four public calendar servers on 2026-07-15. Pending Bitcoin attestation — after ~24 h run
+  `ots-cli.js upgrade provenance.manifest.sha256.ots` and commit the upgraded proof to make it
+  locally verifiable. Internet Archive snapshot: submission was rate-limited on release day;
+  record the snapshot URL here once accepted.
 - Cross-publication (optional): a short public post linking the v1.0.0 release.
 
 ## 6. Scope and Domain Framing
