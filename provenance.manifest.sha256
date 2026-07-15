@@ -1,11 +1,11 @@
 # Content manifest — LLM-agnostic ICM framework
 # Generated 2026-07-15. SHA-256 of each git-tracked file (manifest excluded).
-# Combined root hash (SHA-256 of the entry lines below): 5af267581480991c10f6fe510d3880a3d6a97f1d9c1ba2ffc4dc1cf28866617c
+# Combined root hash (SHA-256 of the entry lines below): 5dd4976157c388841e748540a9c50e475802063e13427346a105ba59646e9514
 # Regenerate / verify: python _core/scripts/make_provenance.py [--check]
 
 d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c  .gitattributes
 1c2ed4b06d8a754ab2c46b62cc554f156a36fc798975ae68a26cb20977b65929  .github/copilot-instructions.md
-cb8340d22c258227289d0d24ed84c4bd2e3146172cdb515a7d417d4b843431de  .github/workflows/ci.yml
+68ecebb1736e85d5849f6cc003ca447803774f9c71692552378f5937af6806dd  .github/workflows/ci.yml
 b6fce4553a6af98f17b531750a893aa85114c3baf982c9856f1b5aee3ffd5155  .gitignore
 26a4e6607ca98af4a6150fd49762bc71e36a3b3b3b8876a2dd4a1487d8104a26  AGENTS.md
 ee569a4855c28166f6d9d9a71562cb137113134e435e9f6b8fda3666fcd9241e  ARCHITECTURE.md
