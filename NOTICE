@@ -2,7 +2,14 @@ LLM-agnostic ICM framework
 
 Copyright 2026 Alejandro Rodriguez (ORCID 0009-0002-4730-3933)
 
-This project cites the Interpretable Context Methodology (ICM) as prior art.
+This project is an independent implementation of ideas from the Interpretable
+Context Methodology (ICM) by Jake Van Clief and David McDermott, credited as
+prior art in README.md, CITATION.cff, and PROVENANCE.md.
 
-If any files from the ICM reference implementation are copied verbatim or adapted directly, add the upstream MIT notice here.
+No files from the ICM reference implementation
+(https://github.com/RinDig/Interpreted-Context-Methdology, MIT license) have
+been copied or adapted into this repository; all code and documentation here
+are original work (see PROVENANCE.md). If upstream files are ever incorporated,
+the upstream MIT license text and copyright notice must be reproduced in this
+file at that time.
 

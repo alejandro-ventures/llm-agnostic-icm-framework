@@ -9,6 +9,37 @@ filesystem is the architecture, and the rules that matter are enforced by code, 
 This repository contains only generic, reusable framework code, documentation, and synthetic
 examples — no private data, credentials, or secrets.
 
+## At a glance
+
+```text
+GitHub Copilot ──► .github/copilot-instructions.md ─┐
+Claude Code ─────► CLAUDE.md ───────────────────────┤  one-line shims —
+Codex CLI ───────► (reads AGENTS.md natively) ──────┘  one source of truth
+                                                    │
+                  ┌─────────────────────────────────┴───┐
+                  │ AGENTS.md — Layer-0 router          │
+                  │ fixed instruction precedence,       │
+                  │ deterministic routing               │
+                  └──────────────────┬──────────────────┘
+                                     │  "OCR the PDFs in …/input"
+           ┌─────────────────────────┼─────────────────────────┐
+           ▼                         ▼                         ▼
+  workflows/ocr-folder/     workflows/transcribe/     workflows/scratch/
+  ├ SKILL.md (contract)     + 5 more, same shape:     the routed fallback —
+  ├ own venv, pinned deps   contract, venv, gates,    unplanned tasks land
+  └ input/ ──► output/      logs — one folder each    here, same gates + logs
+           │                         │                         │
+           └─────────────────────────┼─────────────────────────┘
+                                     ▼
+             enforced in code, not prose — on every run:
+             sandbox.py      out-of-workspace writes & secret files refused
+             shared/hooks/   secret-reading tool calls denied at the harness
+             token-tracker   tokens, local-vs-cloud source, minutes saved
+```
+
+The filesystem is the architecture: one router file, one folder per workflow, and the rules
+that matter enforced by scripts every run has to pass through.
+
 ## Quick start
 ```bash
 python _core/scripts/health_check.py        # structure check: expect GO

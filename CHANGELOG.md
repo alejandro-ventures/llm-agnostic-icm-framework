@@ -2,6 +2,14 @@
 
 All notable changes to this project are documented here.
 
+## [Unreleased]
+### Changed
+- `README.md` — added an "At a glance" ASCII architecture diagram: shims → router →
+  workflow folders → code-enforced guardrails.
+- `NOTICE` — replaced the conditional attribution placeholder with a definitive statement:
+  no upstream ICM reference-implementation files are included; MIT notice reproduction is
+  required only if that ever changes.
+
 ## [2.1.0] - 2026-07-15
 Evidence and contracts: honest compatibility claims, a written threat model, machine-checked
 workflow contracts, a leak gate — and four new real-use workflows.
